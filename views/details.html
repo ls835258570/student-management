@@ -1,0 +1,70 @@
+<div class="container wrap">
+    <div class="mainHeader"><h3>详情页</h3></div>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">名字:</label>
+            <div class="col-sm-10 ">
+                <p class="form-control-static">{{details.name}}</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">QQ:</label>
+            <div class="col-sm-10 ">
+                <p class="form-control-static">{{details.qq}}</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">修真类型:</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">{{details.type}}</p>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">毕业学校:</label>
+            <div class="col-sm-10 ">
+                <p class="form-control-static">{{details.school}}</p>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">资质:</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">{{details.talent}}</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">修真等级:</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">{{details.level}}</p>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">预计入学时间:</label>
+            <div class="col-sm-10 ">
+                <p class="form-control-static">{{details.joinTime|date:'yyyy-MM-dd'}}</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">修行立志:</label>
+            <div class="col-sm-10 ">
+                <p class="form-control-static">{{details.wish}}</p>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12 ">
+                <button class="btn btn-success " type="submit" ui-sref="home.main.change({id:x.id,name:x.name})">修改</button>
+                <button class="btn btn-danger " type="submit" ui-sref="home.main.main">返回</button>
+            </div>
+       </div>
+    </form>
+</div>

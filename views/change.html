@@ -1,0 +1,146 @@
+<div class="mainHeader"><h3>修改信息</h3></div>
+<div>
+    <div class="wrap">
+        <form name="signForm" class="form-inline">
+            <div class="row">
+                <label class="col-md-2 col-sm-12 word" for="name">姓名：</label>
+                <!--<pre>{{singForm.username.$valid}}</pre>-->
+                <!--<pre>{{userdata.username}}</pre>-->
+                <input class="col-md-10 col-sm-12"
+                       type="text"
+                       id="name"
+                       name="userName"
+                       ng-model="vm.p.name"
+                       required
+                       ng-minlength="2"
+                       placeholder="name"
+                />
+                <span class="error"
+                ng-if="signForm.userName.$error.required && signForm.userName.$touched">名字不能为空</span>
+                <span class="error" ng-if="signForm.userName.$error.minlength && signForm.userName.$touched">
+                请输入大于两个字符的有效名字</span>
+            </div>
+            <div class="row">
+                <label class="col-md-2 col-sm-12 word" for="qq">QQ：</label>
+                <input class="col-md-10 col-sm-12"
+                       type="text"
+                       id="qq"
+                       name="userQQ"
+                       ng-model="vm.p.qq"
+                       required
+                       ng-minlength="6"
+                       ng-maxlength="10"
+                       placeholder="qq"
+                />
+                <p class="error" ng-if="signForm.userQQ.$error.required && signForm.userQQ.$touched">QQ不能为空</p>
+                <p class="error" ng-if="(signForm.userQQ.$error.minlength ||signForm.userQQ.$error.maxlength)&& signForm.userQQ.$touched">
+                    请输入6到10个数字之间符合要求的QQ</p>
+            </div>
+            <div class="row">
+                <div class="col-md-2 col-sm-12 word"><label>修真类型：</label></div>
+                <!--<pre>{{userdata.userType}}</pre>-->
+                <!--<pre>{{signForm.userType.$valid}}</pre>-->
+                <div class="col-md-10 col-sm-12 word">
+                    <input type="radio" name="userType" ng-model="vm.p.type" id="css" value="1"/><label for="css">CSS</label>
+                    <input type="radio" name="userType" ng-model="vm.p.type" id="js" value="2"/><label
+                        for="js">JS</label>
+                    <input type="radio" name="type" ng-model="vm.p.type" id="java" value="3"/><label for="java">JAVA</label>
+                    <input type="radio" name="type" ng-model="vm.p.type" id="maintain" value="4"/><label
+                        for="maintain">运维</label>
+                    <input type="radio" name="type" ng-model="vm.p.type" id="dba" value="5"/><label
+                        for="dba">DBA</label>
+                    <input type="radio" name="type" ng-model="vm.p.type" id="product" value="6"/><label
+                        for="product">产品</label>
+                    <input type="radio" name="type" ng-model="vm.p.type" id="ios" value="7"/><label
+                        for="ios">IOS</label>
+                    <input type="radio" name="type" ng-model="vm.p.type" id="android" value="8"/><label
+                        for="android">ANDROID</label>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-md-2 col-sm-12 word" for="school">毕业院校：</label>
+                <input class="col-md-10 col-sm-12"
+                       type="text"
+                       id="school"
+                       name="userSchool"
+                       ng-model="vm.p.school"
+                       required
+                       ng-minlength="2"
+                       placeholder="school"
+                />
+                <p class="error" ng-if="signForm.userSchool.$error.required && signForm.userSchool.$touched">学校名不能为空</p>
+                <p class="error" ng-if="signForm.userSchool.$error.minlength && signForm.userSchool.$touched">
+                请输入符合要求的学校名称</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 col-sm-12 word"><label>资质：</label></div>
+                <div class="col-md-10 col-sm-12 word">
+                    <input type="radio" name="typeA" id="good" ng-model="vm.p.talent" value="1"><label for="good" >学霸</label>
+                    <input type="radio" name="typeA" id="bad" ng-model="vm.p.talent" value="1"><label for="bad" >学渣</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 col-sm-12 word"><label>修行等级：</label></div>
+                <div class="col-md-10 col-sm-12 word">
+                    <input type="radio" name="typeB" id="base" ng-model="vm.p.level" value="1"><label for="base">0基础</label>
+                    <input type="radio" name="typeB" id="three" ng-model="vm.p.level" value="2"><label
+                        for="three">修行3个月以内</label>
+                    <input type="radio" name="typeB" id="six" ng-model="vm.p.level" value="3"><label
+                        for="six">修行6个月以内</label>
+                    <input type="radio" name="typeB" id="oneYear" ng-model="vm.p.level" value="4"><label
+                        for="oneYear">修行1年以内</label>
+                    <input type="radio" name="typeB" id="threeYear" ng-model="vm.p.level" value="5"><label for="threeYear">修行3年以内</label>
+                    <input type="radio" name="typeB" id="fourYear" ng-model="vm.p.level" value="6"><label for="fourYear">修行3年以上</label>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <label for="time1" class="col-md-2 col-sm-12 word">预计入学时间：</label>
+                <input class="col-md-10 col-sm-12"
+
+                       id="time1"
+                       name="userTime1"
+                       ng-model="vm.p.joinTime"
+                       required
+                       data-date-format="yyyy-MM-dd"
+                       data-date-type="number"
+                       bs-datepicker=""
+
+                />
+                <p class="error" ng-if="signForm.userTime1.$error.required && signForm.userTime1.$touched">时间不能为空</p>
+                <p class="error" ng-if="signForm.userTime1.$error.minlength && signForm.userTime1.$touched">
+                    请输入符合要求的时间</p>
+            </div>
+
+            <div class="row">
+                <!--<label for="vow" class="col-md-2 col-sm-12" style="height: 58px">修行立愿：</label>-->
+                <!--<textarea class="col-md-10 col-sm-12 "-->
+                          <!--rows="3"-->
+                          <!--id="vow"-->
+                          <!--name="userVow"-->
+                          <!--ng-model="vm.p.wish"-->
+                          <!--required-->
+                          <!--ng-minlength="20"-->
+                          <!--placeholder="wish"-->
+                <!--&gt;-->
+                <!--</textarea>-->
+                <label class="col-md-2 col-sm-12 word">修行立愿：</label>
+                <div class="col-md-10 col-sm-12 word"><script  type="text/plain" id="editor" style="height:200px;width:726px;"  ></script></div>
+                <!--<div class="col-md-10 col-sm-12 word"><script id="editor" type="text/plain" style="width:726px;height:260px;"></script></div>-->
+                <!--<p class="error" ng-if="signForm.userVow.$error.required && signForm.userVow.$touched">志愿不能为空</p>-->
+                <!--<p class="error" ng-if="signForm.userVow.$error.minlength && signForm.userVow.$touched">-->
+                    <!--请输入大于20字的志愿</p>-->
+
+            </div>
+            <div class="row">
+                <div class="col-md-12 ">
+                    <button class="btn btn-success" type="submit" id="save" ng-click="vm.changeStu()">保存</button>
+                    <button class="btn btn-danger" type="submit" id="cancel" ui-sref="home.main.main">返回</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

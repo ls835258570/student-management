@@ -1,0 +1,56 @@
+<form name="user" ng-submit="submitForm()">
+    <div class="form-inline row">
+        <h3>查找学员</h3>
+        <!--<pre>{{userD.userName.$valid}}</pre>-->
+        <!--<pre>{{userD.userName}}</pre>-->
+        <!--<pre>{{userData.userName}}</pre>-->
+        <input name="userName"
+               type="text"
+               class="col-md-12 form-control"
+               placeholder="请输入您要查找的用户名"
+               ng-model="search1"
+
+        >
+        <input name="userName"
+               type="text"
+               class="col-md-12 form-control"
+               placeholder="类型"
+               ng-model="search2"
+
+        >
+        </div>
+    </form>
+
+<div>
+    <table class="table table-hover table-bordered">
+        <tr class="active">
+            <td class="active">序号</td>
+            <td class="active">姓名</td>
+            <td class="active">QQ</td>
+            <td class="active">修真类型</td>
+            <td class="active">毕业院校</td>
+            <td class="active">资质</td>
+            <td class="active">修行等级</td>
+            <td class="active">注册时间</td>
+            <td class="active">预计入学时间</td>
+            <td class="active">修行立愿</td>
+            <td>操作</td>
+        </tr>
+        <tr class="success" ng-repeat="x in list|filter:{name:search1}: false| filter:{type:search2}: false ">
+            <td class="success">{{x.id}}</td>
+            <td class="success">{{x.name}}</td>
+            <td class="success">{{x.qq}}</td>
+            <td class="success">{{x.type}}</td>
+            <td class="success">{{x.school}}</td>
+            <td class="success">{{x.talent}}</td>
+            <td class="success">{{x.level}}</td>
+            <td class="success">{{vm.timestamp1|date:yyyy-mm-dd-hh-mm-ss}}</td>
+            <td class="success">{{x.joinTime|date:yyyy-mm-dd}}</td>
+            <td class="success">{{x.wish}}</td>
+            <td> <button class="btn btn-xs btn-primary" ui-sref="home.main.details({id:x.id})">&emsp;查看&emsp;</button>
+                <button class="btn btn-xs btn-primary" ui-sref="home.main.change({id:x.id,name:x.name})">&emsp;修改&emsp;</button>
+                <button class="btn btn-xs btn-primary" ui-sref="home.main.del({id:x.id})">&emsp;删除&emsp;</button></td>
+        </tr>
+    </table>
+</div>
+

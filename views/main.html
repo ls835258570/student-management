@@ -1,0 +1,41 @@
+<h3>已登记学员列表</h3>
+<!--<div class="add"><a href="#" ui-sref="LeftNav" class="btn btn-primary btn-lg active " role="button"> 111</a></div>-->
+<!--<div class="add"><a href="#" ui-sref="add" class="btn btn-primary btn-lg active " role="button"> 添加</a></div>-->
+<!--<div class="add"><a href="#" ui-sref="detail" class="btn btn-primary btn-lg active " role="button"> 查看详情</a></div>-->
+
+<!--<td class="success">{{vm.timestamp|date:yyyy-mm-dd-hh-mm-ss}}</td>-->
+<div class="mainC">
+    <table class="table table-hover table-bordered  listC">
+        <tr class="">
+            <td class="">序号</td>
+            <td class="">姓名</td>
+            <td class="">QQ</td>
+            <td class="">修真类型</td>
+            <td class="">毕业院校</td>
+            <td class="">资质</td>
+            <td class="">修行等级</td>
+            <td class="">注册时间</td>
+            <td class="">预计入学时间</td>
+            <td class="">修行立愿</td>
+            <td>操作</td>
+        </tr>
+        <tr class="" ng-repeat="x in list">
+            <td class="">{{x.id}}</td>
+            <td class="">{{x.name}}</td>
+            <td class="">{{x.qq}}</td>
+            <td class="">{{vm.types[x.type]}}</td>
+            <td class="">{{x.school}}</td>
+            <td class="">{{vm.talents[x.talent]}}</td>
+            <td class="">{{vm.levels[x.level]}}</td>
+            <td>{{x.createAt | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+            <td class="">{{x.joinTime|date:'yyyy-MM-dd hh:mm:ss'}}</td>
+            <td class="">{{x.wish}}</td>
+            <td> <button class="btn btn-xs btn-primary" ui-sref="home.main.details({id:x.id})">&emsp;查看&emsp;</button>
+             <button class="btn btn-xs btn-primary" ui-sref="home.main.change({id:x.id,name:x.name})">&emsp;修改&emsp;</button>
+             <button class="btn btn-xs btn-primary" ui-sref="home.main.del({id:x.id})">&emsp;删除&emsp;</button></td>
+        </tr>
+        <!--$state.go('main.detail', {id: a.id})-->
+    </table>
+
+
+</div>

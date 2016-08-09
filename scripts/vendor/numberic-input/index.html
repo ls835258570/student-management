@@ -1,0 +1,13 @@
+<p class="lead">能限制只输入数字，以及数字长度</p>
+
+<div class="form-group">
+    <label for="">Number 长度由maxlength控制： {{num}}</label>
+    <input numberic-input class="form-control" type="text" maxlength="3" ng-model="num">
+</div>
+
+
+<br/><br/><br/><br/><br/>
+
+<button ng-click="vm.subtraction()">-</button>
+<input numberic-input type="text" maxlength="3" ng-model="vm.quantity">
+<button ng-click="vm.addition()">+</button>

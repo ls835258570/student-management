@@ -1,0 +1,29 @@
+<p class="lead">该组件用于按钮，防连击</p>
+<p>需要用到promise方法</p>
+<p>1.在button的事件里请求service</p>
+<p>2.service请求的结果又反过来赋到button的promise-btn上，用以将promise传入组件，对$http请求是否有返回结果作出反应</p>
+<br/>
+<p class="text-muted">第一个button只是用timeout来做的延迟模拟</p>
+<p>
+    <button class="btn"
+            ng-click="vm.success($event)"
+            promise-btn="vm.successPromise">Success after delay
+    </button>
+</p>
+
+<!--<button class="btn"-->
+<!--ng-click="login()"-->
+<!--promise-btn="loginPromise">login-->
+<!--</button>-->
+
+<p class="text-muted">第二个button用的K12教师列表接口作为实验，需要配置nginx</p>
+<p>
+    <button class="btn"
+            ng-click="vm.getList()"
+            promise-btn="vm.getListPromise">Get teacher list
+    </button>
+</p>
+
+<ul>
+    <li ng-repeat="li in vm.teacherList">{{li.name}} + {{li.id}}</li>
+</ul>

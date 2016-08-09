@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.word{
+    padding: 0;
+}
+.wrap{
+    max-width: 1200px;
+    margin: 20px auto;
+
+}
+.header{
+    font-weight: bold;
+    color: forestgreen;
+}
+h1>small{
+    color: rebeccapurple;
+}
+.landing{
+    max-width: 600px;
+    margin: 10px auto;
+}
+.landing .row{
+    margin: 10px auto!important;
+}
+.landing .form-group{
+    margin-left: 15px!important;
+}
+.error{
+    color: red;
+}
+.row{
+    margin: 20px auto;
+}
+.mainHeader{
+    text-align: center;
+    color: #0db9f0;
+}
+.form-horizontal .control-label{
+    text-align: left!important;
+}
+.list-group-item{
+    text-align: center!important;
+}
+a:hover{
+    text-decoration: none;
+}
+/*.listC{*/
+    /*height: 300px;*/
+    /*overflow: auto;*/
+/*}*/
